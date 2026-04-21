@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>METISS × OYU</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle at 30% 30%, #ff0055aa, transparent 50%),
+                radial-gradient(circle at 70% 40%, #00d4ffaa, transparent 55%),
+                radial-gradient(circle at 50% 80%, #7a00ffaa, transparent 60%);
+    filter: blur(60px);
+}
+
+.hero h1 {
+    font-size: 80px;
+    letter-spacing: 12px;
+    z-index: 2;
+}
+
+.hero p {
+    opacity: 0.5;
+    z-index: 2;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 10%;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* VIDEOS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #0b0b0b;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.25);
+}
+
+.card a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* RIDER */
+.item {
+    background: #0b0b0b;
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.content {
+    display: none;
+    margin-top: 10px;
+    opacity: 0.7;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.item.active .content {
+    display: block;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.3;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>METISS × OYU</h1>
+        <p>LIVE / SOUND / CULTURE</p>
+    </div>
+</div>
+
+<!-- VIDEOS -->
+<section class="section">
+<h2>LIVE ARCHIVE</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <div>METISS LIVE 01</div>
+        <a href="https://youtu.be/-a4J-zjGFFA" target="_blank">Watch video</a>
+    </div>
+
+    <div class="card">
+        <div>METISS LIVE 02</div>
+        <a href="https://youtu.be/6cS7diejKRs" target="_blank">Watch video</a>
+    </div>
+
+    <div class="card">
+        <div>OYU LIVE SET</div>
+        <a href="https://youtu.be/mF_6ZLaVjiU" target="_blank">Watch video</a>
+    </div>
+
+</div>
+</section>
+
+<!-- RIDER -->
+<section class="section">
+<h2>RIDER</h2>
+
+<div class="item" onclick="toggle(this)">
+Бытовой райдер
+<div class="content">
+METISS × OYU обеспечивает артистам комфортные условия пребывания.  
+Обязательны: вода, отдых, приватное пространство и уважительное отношение.
+</div>
+</div>
+
+<div class="item" onclick="toggle(this)">
+Транспорт
+<div class="content">
+Комфорт-класс или выше. Полный трансфер: аэропорт → отель → площадка → обратно.
+</div>
+</div>
+
+<div class="item" onclick="toggle(this)">
+Гримёрная
+<div class="content">
+Закрытое помещение, зеркало, вода, доступ за 2–3 часа до шоу.
+</div>
+</div>
+
+<div class="item" onclick="toggle(this)">
+Сцена и звук
+<div class="content">
+Безопасная сцена + профессиональная FOH система без искажений.
+</div>
+</div>
+
+<div class="item" onclick="toggle(this)">
+Саундчек
+<div class="content">
+Обязательная настройка звука до мероприятия с инженером площадки.
+</div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+<h2>CONTACT</h2>
+
+<p style="opacity:0.6;">Booking / Collaboration / Press</p>
+
+<a class="btn" href="https://instagram.com/metiss_kz" target="_blank">
+@metiss_kz
+</a>
+</section>
+
+<div class="footer">
+METISS × OYU — INDUSTRIAL MUSIC SYSTEM
+</div>
+
+<script>
+function toggle(el){
+    el.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
